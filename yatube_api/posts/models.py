@@ -26,7 +26,10 @@ class Post(models.Model):
     )
 
     def __str__(self):
-        return self.text
+        return self.text[:10]
+
+    class Meta:
+        ordering = ('author',)
 
 
 class Comment(models.Model):
